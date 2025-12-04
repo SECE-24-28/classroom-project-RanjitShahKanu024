@@ -21,6 +21,7 @@ function App() {
         </a>
       </header>
       <Home />
+      <squarebox />
     </div>
   );
 }
