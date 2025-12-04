@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranjit Shah Kanu | BTech CSE Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --dark-color: #1e293b;
+        --light-color: #f8fafc;
+        --accent-color: #06b6d4;
+        --text-color: #334155;
+        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--light-color);
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: white;
+        box-shadow: var(--shadow);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: var(--accent-color);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark-color);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+
+      .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 10rem 0 5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .hero-content h1 {
+        font-size: 3.2rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        color: var(--dark-color);
+      }
+
+      .hero-content h1 span {
+        color: var(--primary-color);
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: var(--text-color);
+      }
+
+      .highlight {
+        color: var(--accent-color);
+        font-weight: 600;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.8rem 1.8rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .hero-image {
+        text-align: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      /* Sections */
+      section {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--dark-color);
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        width: 70px;
+        height: 4px;
+        background-color: var(--accent-color);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* About Section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about-text p {
+        margin-bottom: 1.5rem;
+      }
+
+      .education {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+
+      .education h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      /* Skills Section */
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-category {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+
+      .skill-category h3 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .skill-item {
+        background-color: #e0f2fe;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .project-content {
+        padding: 1.5rem;
+      }
+
+      .project-content h3 {
+        color: var(--dark-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-content p {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+      }
+
+      /* Contact Section */
+      .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .contact-item i {
+        width: 50px;
+        height: 50px;
+        background-color: #dbeafe;
+        color: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .social-links a {
+        color: white;
+        font-size: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Chatbot */
+      .chatbot-container {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+      }
+
+      .chatbot-toggle {
+        width: 60px;
+        height: 60px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .chatbot-toggle:hover {
+        background-color: var(--secondary-color);
+        transform: scale(1.1);
+      }
+
+      .chatbot-window {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 350px;
+        height: 500px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .chatbot-header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chatbot-header h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .close-chatbot {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .chatbot-messages {
+        flex: 1;
+        padding: 1.5rem;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .message {
+        max-width: 80%;
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+      }
+
+      .bot-message {
+        background-color: #f1f5f9;
+        align-self: flex-start;
+        border-bottom-left-radius: 2px;
+      }
+
+      .user-message {
+        background-color: var(--primary-color);
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 2px;
+      }
+
+      .chatbot-input {
+        display: flex;
+        padding: 1rem;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .chatbot-input input {
+        flex: 1;
+        padding: 0.8rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+      }
+
+      .chatbot-input button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0 1.5rem;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .chatbot-input button:hover {
+        background-color: var(--secondary-color);
+      }
+
+      .suggested-questions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0 1rem 1rem;
+      }
+
+      .suggested-question {
+        background-color: #e0f2fe;
+        color: var(--primary-color);
+        border: none;
+        padding: 0.4rem 0.8rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .suggested-question:hover {
+        background-color: #bae6fd;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+          padding: 8rem 0 3rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          padding: 2rem 0;
+          box-shadow: var(--shadow);
+          transform: translateY(-150%);
+          transition: var(--transition);
+          z-index: 999;
+        }
+
+        .nav-links.active {
+          transform: translateY(0);
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .chatbot-window {
+          width: 300px;
+          height: 450px;
+          right: -20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .chatbot-window {
+          width: calc(100vw - 40px);
+          right: -60px;
+        }
+
+        .chatbot-container {
+          right: 20px;
+          bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">Ranjit<span>.</span></a>
+          <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+          </div>
+          <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Hi, I'm <span>Ranjit Shah Kanu</span></h1>
+          <p>
+            A passionate
+            <span class="highlight">Computer Science Engineering</span> student
+            at <span class="highlight">Sri Eshwar College of Engineering</span>,
+            Tamil Nadu. I'm dedicated to building innovative tech solutions and
+            expanding my knowledge in software development.
+          </p>
+          <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1517697471339-4aa32003c11a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80"
+            alt="Ranjit Shah Kanu - Tech Student"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              Hello! I'm <strong>Ranjit Shah Kanu</strong>, a dedicated Computer
+              Science and Engineering student at Sri Eshwar College of
+              Engineering in Tamil Nadu, India.
+            </p>
+            <p>
+              My journey in technology began with a curiosity about how software
+              systems work, which has evolved into a passion for developing
+              practical solutions to real-world problems. I enjoy the process of
+              turning ideas into reality through code.
+            </p>
+            <p>
+              Currently, I'm focused on expanding my knowledge in full-stack
+              development, cloud computing, and data structures while working on
+              personal projects that challenge my problem-solving abilities.
+            </p>
+            <p>
+              When I'm not coding, you can find me exploring new technologies,
+              contributing to open-source projects, or participating in
+              hackathons.
+            </p>
+          </div>
+          <div class="education">
+            <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+            <p>
+              <strong>Bachelor of Technology</strong><br />
+              Computer Science and Engineering<br />
+              Sri Eshwar College of Engineering<br />
+              Tamil Nadu, India<br />
+              2022 - 2026 (Expected)
+            </p>
+            <h3><i class="fas fa-certificate"></i> Certifications</h3>
+            <p>
+              • Python for Everybody - Coursera<br />
+              • AWS Cloud Practitioner<br />
+              • Web Development Bootcamp - Udemy
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-title">
+          <h2>Technical Skills</h2>
+        </div>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Programming</h3>
+            <div class="skill-list">
+              <div class="skill-item">Python</div>
+              <div class="skill-item">Java</div>
+              <div class="skill-item">C++</div>
+              <div class="skill-item">JavaScript</div>
+              <div class="skill-item">SQL</div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+            <div class="skill-list">
+              <div class="skill-item">HTML/CSS</div>
+              <div class="skill-item">React</div>
+              <div class="skill-item">Node.js</div>
+              <div class="skill-item">Express.js</div>
+              <div class="skill-item">MongoDB</div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+            <div class="skill-list">
+              <div class="skill-item">Git & GitHub</div>
+              <div class="skill-item">VS Code</div>
+              <div class="skill-item">AWS</div>
+              <div class="skill-item">Docker</div>
+              <div class="skill-item">Postman</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-content">
+              <h3>E-Commerce Platform</h3>
+              <p>
+                A full-stack e-commerce website with user authentication,
+                product catalog, shopping cart, and payment integration using
+                MERN stack.
+              </p>
+              <div class="skill-list">
+                <div class="skill-item">React</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">MongoDB</div>
+                <div class="skill-item">Stripe API</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-content">
+              <h3>College Event Management System</h3>
+              <p>
+                A web application for managing college events, registrations,
+                and notifications with an admin panel and student dashboard.
+              </p>
+              <div class="skill-list">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">Django</div>
+                <div class="skill-item">PostgreSQL</div>
+                <div class="skill-item">Bootstrap</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-content">
+              <h3>AI-Powered Chatbot</h3>
+              <p>
+                An intelligent chatbot using natural language processing to
+                answer queries about college facilities, courses, and events.
+              </p>
+              <div class="skill-list">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">TensorFlow</div>
+                <div class="skill-item">NLTK</div>
+                <div class="skill-item">Flask</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Me</h2>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <p>ranjit.shah@example.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>+91 98765 43210</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Location</h3>
+                <p>Sri Eshwar College of Engineering, Tamil Nadu, India</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-link"></i>
+              <div>
+                <h3>Connect Online</h3>
+                <p>GitHub, LinkedIn, LeetCode</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>
+              I'm always open to discussing new opportunities, collaborating on
+              projects, or just having a friendly chat about technology. Feel
+              free to reach out!
+            </p>
+            <br />
+            <p>
+              Currently seeking internship opportunities for Summer 2024 in
+              software development roles.
+            </p>
+            <br />
+            <a href="mailto:ranjit.shah@example.com" class="btn">Send Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <h3>Ranjit Shah Kanu</h3>
+        <p>BTech Computer Science & Engineering Student | Tech Enthusiast</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 Ranjit Shah Kanu. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+      <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+          <h3><i class="fas fa-robot"></i> Portfolio Assistant</h3>
+          <button class="close-chatbot" id="closeChatbot">&times;</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+          <div class="message bot-message">
+            Hello! I'm your portfolio assistant. How can I help you today? You
+            can ask me about Ranjit's skills, education, projects, or contact
+            information.
+          </div>
+          <div class="suggested-questions" id="suggestedQuestions">
+            <button
+              class="suggested-question"
+              data-question="Tell me about Ranjit's education"
+            >
+              Education
+            </button>
+            <button
+              class="suggested-question"
+              data-question="What are Ranjit's technical skills?"
+            >
+              Skills
+            </button>
+            <button
+              class="suggested-question"
+              data-question="What projects has Ranjit worked on?"
+            >
+              Projects
+            </button>
+            <button
+              class="suggested-question"
+              data-question="How can I contact Ranjit?"
+            >
+              Contact
+            </button>
+          </div>
+        </div>
+        <div class="chatbot-input">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Type your message here..."
+          />
+          <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // Chatbot functionality
+      const chatbotToggle = document.getElementById("chatbotToggle");
+      const chatbotWindow = document.getElementById("chatbotWindow");
+      const closeChatbot = document.getElementById("closeChatbot");
+      const userInput = document.getElementById("userInput");
+      const sendMessage = document.getElementById("sendMessage");
+      const chatbotMessages = document.getElementById("chatbotMessages");
+      const suggestedQuestions = document.querySelectorAll(
+        ".suggested-question"
+      );
+
+      // Toggle chatbot window
+      chatbotToggle.addEventListener("click", () => {
+        chatbotWindow.style.display = "flex";
+      });
+
+      closeChatbot.addEventListener("click", () => {
+        chatbotWindow.style.display = "none";
+      });
+
+      // Send message function
+      function sendUserMessage() {
+        const message = userInput.value.trim();
+        if (message === "") return;
+
+        // Add user message to chat
+        addMessage(message, "user");
+        userInput.value = "";
+
+        // Generate bot response
+        setTimeout(() => {
+          generateBotResponse(message);
+        }, 500);
+      }
+
+      // Add message to chat
+      function addMessage(text, sender) {
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("message");
+        messageDiv.classList.add(
+          sender === "user" ? "user-message" : "bot-message"
+        );
+        messageDiv.textContent = text;
+        chatbotMessages.appendChild(messageDiv);
+
+        // Scroll to bottom
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+
+      // Generate bot response
+      function generateBotResponse(userMessage) {
+        let response = "";
+        const lowerMessage = userMessage.toLowerCase();
+
+        if (
+          lowerMessage.includes("hello") ||
+          lowerMessage.includes("hi") ||
+          lowerMessage.includes("hey")
+        ) {
+          response =
+            "Hello! I'm here to help you learn more about Ranjit Shah Kanu. What would you like to know about him?";
+        } else if (
+          lowerMessage.includes("education") ||
+          lowerMessage.includes("college") ||
+          lowerMessage.includes("study")
+        ) {
+          response =
+            "Ranjit is currently pursuing a Bachelor of Technology in Computer Science and Engineering at Sri Eshwar College of Engineering in Tamil Nadu. He is expected to graduate in 2026. He also holds certifications in Python, AWS, and Web Development.";
+        } else if (
+          lowerMessage.includes("skill") ||
+          lowerMessage.includes("technology") ||
+          lowerMessage.includes("programming")
+        ) {
+          response =
+            "Ranjit has skills in multiple programming languages including Python, Java, C++, and JavaScript. He's also proficient in web technologies like React, Node.js, and MongoDB. Additionally, he's familiar with tools like Git, Docker, AWS, and VS Code.";
+        } else if (
+          lowerMessage.includes("project") ||
+          lowerMessage.includes("work")
+        ) {
+          response =
+            "Ranjit has worked on several projects including: 1) A full-stack E-Commerce Platform using MERN stack, 2) A College Event Management System with Django, and 3) An AI-Powered Chatbot using Python and TensorFlow. You can find more details in the Projects section of his portfolio.";
+        } else if (
+          lowerMessage.includes("contact") ||
+          lowerMessage.includes("email") ||
+          lowerMessage.includes("phone")
+        ) {
+          response =
+            "You can contact Ranjit via email at ranjit.shah@example.com or phone at +91 98765 43210. He's also available on LinkedIn, GitHub, and other social platforms. He's currently looking for internship opportunities for Summer 2024.";
+        } else if (
+          lowerMessage.includes("college") ||
+          lowerMessage.includes("sri eshwar")
+        ) {
+          response =
+            "Sri Eshwar College of Engineering is located in Tamil Nadu, India. It's where Ranjit is currently pursuing his BTech in Computer Science and Engineering. The college is known for its strong engineering programs and technical education.";
+        } else if (
+          lowerMessage.includes("internship") ||
+          lowerMessage.includes("job") ||
+          lowerMessage.includes("opportunity")
+        ) {
+          response =
+            "Ranjit is actively seeking internship opportunities for Summer 2024 in software development roles. He's interested in positions that involve web development, cloud computing, or AI/ML projects. You can contact him directly to discuss potential opportunities.";
+        } else if (
+          lowerMessage.includes("hobby") ||
+          lowerMessage.includes("interest")
+        ) {
+          response =
+            "Apart from coding, Ranjit enjoys exploring new technologies, contributing to open-source projects, and participating in hackathons. He's also interested in cloud computing, AI, and web development trends.";
+        } else {
+          response =
+            "I'm not sure about that. You can ask me about Ranjit's education, skills, projects, or contact information. Try asking something like 'What are Ranjit's technical skills?' or 'Tell me about his projects'.";
+        }
+
+        addMessage(response, "bot");
+      }
+
+      // Event listeners
+      sendMessage.addEventListener("click", sendUserMessage);
+
+      userInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          sendUserMessage();
+        }
+      });
+
+      // Suggested questions
+      suggestedQuestions.forEach((button) => {
+        button.addEventListener("click", () => {
+          const question = button.getAttribute("data-question");
+          addMessage(question, "user");
+
+          setTimeout(() => {
+            generateBotResponse(question);
+          }, 500);
+        });
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Initial bot greeting
+      setTimeout(() => {
+        if (!localStorage.getItem("chatbotGreeted")) {
+          addMessage(
+            "Hi there! I'm your portfolio assistant. Ask me anything about Ranjit's education, skills, projects, or how to contact him.",
+            "bot"
+          );
+          localStorage.setItem("chatbotGreeted", "true");
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>
